@@ -1,0 +1,16 @@
+{
+  "name": "insecure-webapp-node",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Intentionally insecure Node.js app for SAST/Quality Gate testing",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "mysql": "^2.18.1",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
