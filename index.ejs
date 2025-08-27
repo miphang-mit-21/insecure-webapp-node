@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title><%= title %></title>
+  </head>
+  <body>
+    <h1><%= message %></h1>
+
+    <!-- Intentionally unescaped user input to demonstrate XSS -->
+    <p>Query: <%- q %></p>
+
+    <% if (rows && rows.length) { %>
+      <ul>
+        <% rows.forEach(function(r){ %>
+          <li><%- r.name %></li>
+        <% }) %>
+      </ul>
+    <% } else { %>
+      <p>No results.</p>
+    <% } %>
+
+    <p>Try endpoints: 
+      <a href="/login">/login</a>, 
+      <a href="/search?q=test">/search?q=...</a>, 
+      <a href="/ping?host=127.0.0.1">/ping?host=...</a>, 
+      <a href="/calc?expr=2*3">/calc?expr=...</a>
+    </p>
+  </body>
+</html>
